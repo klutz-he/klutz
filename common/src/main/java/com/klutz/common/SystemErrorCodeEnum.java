@@ -1,7 +1,5 @@
 package com.klutz.common;
 
-import com.klutz.common.exception.SystemException;
-
 /**
  * created on 2021/11/24
  * @author klutz

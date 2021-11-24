@@ -1,12 +1,10 @@
-package com.klutz.common.exception;
-
-import com.klutz.common.SystemErrorCodeEnum;
+package com.klutz.common;
 
 /**
  * created on 2021/11/24
  * @author klutz
  */
-public class SystemException extends BaseException{
+public class SystemException extends BaseException {
 
     public SystemException(SystemErrorCodeEnum errorCodeEnum) {
         super(errorCodeEnum);
