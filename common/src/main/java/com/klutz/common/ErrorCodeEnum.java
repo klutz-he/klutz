@@ -8,7 +8,7 @@ public interface ErrorCodeEnum {
 
     int getCode();
 
-    String getMsg();
+    String getMessage();
 
     /**
      * 抛出异常

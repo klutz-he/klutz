@@ -6,15 +6,17 @@ package com.klutz.common;
  */
 public enum SystemErrorCodeEnum implements ErrorCodeEnum{
 
-    SYSTEM_ERROR(1000001,"系统错误");
+    SYSTEM_ERROR(1000001,"系统错误"),
+    PARAMS_ERROR(1000002,"参数错误")
+    ;
 
     private final int code;
 
-    private final String msg;
+    private final String message;
 
-    SystemErrorCodeEnum(int code, String msg) {
+    SystemErrorCodeEnum(int code, String message) {
         this.code = code;
-        this.msg = msg;
+        this.message = message;
     }
 
 
@@ -24,8 +26,8 @@ public enum SystemErrorCodeEnum implements ErrorCodeEnum{
     }
 
     @Override
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
     @Override

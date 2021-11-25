@@ -6,20 +6,29 @@ package com.klutz.common;
  */
 public class BaseException extends RuntimeException{
 
-    private final ErrorCodeEnum errorCodeEnum;
+    private final int code;
 
     public BaseException(ErrorCodeEnum errorCodeEnum) {
-        super(errorCodeEnum.getMsg());
-        this.errorCodeEnum = errorCodeEnum;
+        super(errorCodeEnum.getMessage());
+        this.code = errorCodeEnum.getCode();
+    }
+
+    public BaseException(int code, String message) {
+        super(message);
+        this.code = code;
     }
 
     public BaseException(Throwable cause, ErrorCodeEnum errorCodeEnum) {
-        super(cause);
-        this.errorCodeEnum = errorCodeEnum;
+        super(errorCodeEnum.getMessage(),cause);
+        this.code = errorCodeEnum.getCode();
     }
 
-    public String getMsg( ){
-        return errorCodeEnum.getMsg();
+    public BaseException(Throwable cause, int code, String message) {
+        super(message,cause);
+        this.code = code;
     }
 
+    public int getCode() {
+        return code;
+    }
 }

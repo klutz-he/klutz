@@ -12,7 +12,7 @@ public class CommonResponse<T> {
 
     private int code;
 
-    private String msg;
+    private String message;
 
     private T data;
 
@@ -24,12 +24,12 @@ public class CommonResponse<T> {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {
@@ -48,14 +48,14 @@ public class CommonResponse<T> {
     public static <T>  CommonResponse<T> ok( ){
         CommonResponse<T> commonResponse = new CommonResponse<>();
         commonResponse.setCode(SUCCESS_CODE);
-        commonResponse.setMsg("");
+        commonResponse.setMessage("");
         return commonResponse;
     }
 
     public static <T>  CommonResponse<T> ok( T data ){
         CommonResponse<T> commonResponse = new CommonResponse<>();
         commonResponse.setCode(SUCCESS_CODE);
-        commonResponse.setMsg("");
+        commonResponse.setMessage("");
         commonResponse.setData(data);
         return commonResponse;
     }
@@ -63,7 +63,7 @@ public class CommonResponse<T> {
     public static <T>  CommonResponse<T> fail( Integer code,String msg ){
         CommonResponse<T> commonResponse = new CommonResponse<>();
         commonResponse.setCode(code);
-        commonResponse.setMsg(msg);
+        commonResponse.setMessage(msg);
         return commonResponse;
     }
 
